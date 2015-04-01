@@ -25,6 +25,7 @@ public class StartMenuController {
     @FXML public Label enterPort;
 
     @FXML public TextField usernameField;
+    @FXML public TextField addressField;
     @FXML public TextField portField;
 
     @FXML public Button exit;
@@ -40,7 +41,7 @@ public class StartMenuController {
         String username = usernameField.getText();
         String port = portField.getText();
 
-        StartupInput startupInput = new StartupInput(username, port);
+        StartupInput startupInput = new StartupInput(username, port, addressField.getText());
 
         if(Main.startupInput == null){
             Main.startupInput = startupInput;

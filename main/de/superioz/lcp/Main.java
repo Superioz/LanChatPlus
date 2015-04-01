@@ -15,6 +15,9 @@ import main.de.superioz.lcp.network.eventsystem.events.*;
 import main.de.superioz.lcp.network.eventsystem.handling.NetworkEventManager;
 import main.de.superioz.lcp.network.eventsystem.listener.*;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
  * Class created on März in 2015
  */
@@ -32,11 +35,6 @@ public class Main extends Application {
 
     public static ChatSceneController chatSceneController;
     public static StartMenuController primaryStageController;
-
-    /*
-    1.
-    TODO Bugfixes
-     */
 
     /**
      * The main method of the application. First it starts the server if a
@@ -85,7 +83,7 @@ public class Main extends Application {
         primaryStage.sizeToScene();
         primaryStage.setResizable(false);
         primaryStage.centerOnScreen();
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/main/ressources/icons/stageIcon.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/icons/stageIcon.png")));
 
         // Set Close Reuest Event and show
         this.showStartupMenu();
@@ -133,6 +131,16 @@ public class Main extends Application {
      */
     public static String getComputername(){
         return System.getProperty("user.name");
+    }
+
+    public static String getAddress(){
+        try{
+            return InetAddress.getLocalHost().getHostAddress();
+        }catch(UnknownHostException e){
+            e.printStackTrace();
+        }
+
+        return "-1";
     }
 
 }

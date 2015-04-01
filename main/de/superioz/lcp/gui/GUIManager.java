@@ -42,7 +42,7 @@ public class GUIManager {
         FXMLLoader loader = new FXMLLoader();
         Parent fxmlScene = loader.load(getClass().getResource("scenes/startMenu.fxml").openStream());
         Scene scene = new Scene(fxmlScene);
-        scene.getStylesheets().add("/main/ressources/style.css");
+        scene.getStylesheets().add("/main/resources/style.css");
 
         Main.primaryStage.setScene(scene);
         Main.primaryStageController = loader.getController();
@@ -55,13 +55,13 @@ public class GUIManager {
         FXMLLoader loader = new FXMLLoader();
         Parent fxmlScene = loader.load(getClass().getResource("scenes/chatScene.fxml").openStream());
         Scene scene = new Scene(fxmlScene);
-        scene.getStylesheets().add("/main/ressources/style.css");
+        scene.getStylesheets().add("/main/resources/style.css");
 
         // Creating stage
         Stage stage = new Stage();
         stage.setTitle(getChildTitle("Chat Interface"));
         stage.setScene(scene);
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/main/ressources/icons/stageIcon.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/icons/stageIcon.png")));
 
         // Sizing of stage
         stage.sizeToScene();

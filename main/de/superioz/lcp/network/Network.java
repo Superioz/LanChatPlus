@@ -4,10 +4,10 @@ import main.de.superioz.lcp.Main;
 import main.de.superioz.lcp.logging.ConsoleLogger;
 import main.de.superioz.lcp.logging.LoggingLevel;
 import main.de.superioz.lcp.messaging.channel.DataChannel;
+import main.de.superioz.lcp.network.connection.IP;
 import main.de.superioz.lcp.network.connection.Port;
 import main.de.superioz.lcp.network.eventsystem.events.ClientDisconnectEvent;
 import main.de.superioz.lcp.network.eventsystem.handling.NetworkEventManager;
-import main.de.superioz.lcp.util.connection.IPHandler;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -24,10 +24,12 @@ public class Network {
     private static NetworkClient networkClient;
     public List<Thread> networkThreads;
     private Port port;
+    private IP ip;
     public boolean isHost = false;
 
-    public Network(Port port){
+    public Network(Port port, String address){
         this.port = port;
+        this.ip = new IP(address);
         this.networkThreads = new ArrayList<>();
     }
 
@@ -36,7 +38,7 @@ public class Network {
      * to connect with this client
      */
     public int startServer(){
-        networkServer = new NetworkServer(this.port);
+        networkServer = new NetworkServer(this.port, this.ip.getValue());
         final int[] respond = new int[1];
         respond[0] = networkServer.startServer();
 
@@ -180,7 +182,7 @@ public class Network {
     }
 
     public String getIPAddress(){
-        return IPHandler.LOCALHOST + ":" + getPort().getValue();
+        return this.ip.getValue() + ":" + getPort().getValue();
     }
 
 }

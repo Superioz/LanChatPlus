@@ -26,7 +26,7 @@ public class LaunchChatEventListener implements NetworkEventListener {
         // Start the server
         chat.sendln(MessagePattern.SERVER, "Starting server ..");
 
-        Main.network = new Network(event.getStartupInput().getPort());
+        Main.network = new Network(event.getStartupInput().getPort(), event.getStartupInput().getIp());
         int serverRespond = Main.network.startServer();
 
         switch(serverRespond){

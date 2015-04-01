@@ -35,7 +35,7 @@ public class CustomFileManager {
     }
 
     public static String getTextFile(String name){
-        return getInformationFromFile("/main/ressources/textfiles/" + name);
+        return getInformationFromFile("/main/resources/textfiles/" + name);
     }
 
 }

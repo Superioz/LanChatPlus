@@ -39,7 +39,7 @@ public class PopupManager {
 
         // Style
         popupWindow.getDialogPane().getStylesheets()
-                .add(PopupManager.class.getResource("/main/ressources/style.css").toExternalForm());
+                .add(PopupManager.class.getResource("/main/resources/style.css").toExternalForm());
 
         popupWindow.initOwner(owner);
         popupWindow.showAndWait();
@@ -92,7 +92,7 @@ public class PopupManager {
 
         // Style
         popupWindow.getDialogPane().getStylesheets()
-                .add(PopupManager.class.getResource("/main/ressources/style.css").toExternalForm());
+                .add(PopupManager.class.getResource("/main/resources/style.css").toExternalForm());
 
         // Opens and waits for interaction
         popupWindow.initOwner(owner);
@@ -135,7 +135,7 @@ public class PopupManager {
 
         // Style
         popupWindow.getDialogPane().getStylesheets()
-                .add(PopupManager.class.getResource("/main/ressources/style.css").toExternalForm());
+                .add(PopupManager.class.getResource("/main/resources/style.css").toExternalForm());
 
         // Show
         popupWindow.initOwner(owner);

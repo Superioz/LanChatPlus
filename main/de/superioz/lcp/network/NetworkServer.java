@@ -9,7 +9,6 @@ import main.de.superioz.lcp.messaging.channel.DataChannel;
 import main.de.superioz.lcp.messaging.packet.DataPacket;
 import main.de.superioz.lcp.network.connection.IP;
 import main.de.superioz.lcp.network.connection.Port;
-import main.de.superioz.lcp.util.connection.IPHandler;
 
 import java.io.IOException;
 import java.net.BindException;
@@ -30,9 +29,9 @@ public class NetworkServer {
     private ArrayList<DataChannel> clientChannels;
     public ArrayList<String> clientNames;
 
-    public NetworkServer(Port port){
+    public NetworkServer(Port port, String ip){
         this.serverPort = port;
-        this.serverIP = new IP(IPHandler.LOCALHOST);
+        this.serverIP = new IP(ip);
     }
 
     /**

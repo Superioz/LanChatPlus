@@ -45,7 +45,7 @@ public class ChatSceneController {
     @FXML
     public void handleYourProfile(){
         PopupManager.popupCustom(Main.chatInterface
-                , getClass().getResource("/main/ressources/icons/clientProfile.png").toExternalForm()
+                , getClass().getResource("/main/resources/icons/clientProfile.png").toExternalForm()
                 , "Your Profile", "Your Profile",
                 "Username: " + Main.network.getClientsName() +
                 "\nComputer-Name: " + Main.getComputername() +
@@ -55,7 +55,7 @@ public class ChatSceneController {
     @FXML
     public void handleServerProfile(){
         PopupManager.popupCustom(Main.chatInterface
-                , getClass().getResource("/main/ressources/icons/serverProfile.png").toExternalForm()
+                , getClass().getResource("/main/resources/icons/serverProfile.png").toExternalForm()
                 , "Server Profile", "Server Profile",
                         "IP-Address: " + Main.network.getIPAddress());
     }
@@ -68,7 +68,7 @@ public class ChatSceneController {
     @FXML
     public void handleAbout(){
         PopupManager.popupCustom(Main.chatInterface
-                , getClass().getResource("/main/ressources/icons/aboutIcon.png").toExternalForm()
+                , getClass().getResource("/main/resources/icons/aboutIcon.png").toExternalForm()
                 , "About Dialog", "About", CustomFileManager.getTextFile("about"));
     }
 
