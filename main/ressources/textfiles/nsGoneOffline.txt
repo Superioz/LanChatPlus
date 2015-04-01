@@ -1,0 +1,1 @@
+Lost connection to server because the host left. The only thing you can do now is return to menu.

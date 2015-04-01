@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.ChatSceneController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="847.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Connection">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleQuitConnection" text="Quit (Back to menu)" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleYourProfile" text="Your Profile" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleServerProfile" text="Server's Profile" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Program">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExitProgram" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="mainChatWindow" editable="false" layoutX="14.0" layoutY="68.0" prefHeight="418.0" prefWidth="649.0" wrapText="true" />
+      <TextField fx:id="messageField" layoutX="14.0" layoutY="498.0" prefHeight="25.0" prefWidth="649.0" />
+      <TextArea fx:id="onlineUsers" editable="false" layoutX="681.0" layoutY="68.0" prefHeight="418.0" prefWidth="152.0" wrapText="true" />
+      <Text fill="#1d5079" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chatHeader" text="Chat:" wrappingWidth="97.0">
+         <font>
+            <Font name="Arial Black" size="28.0" />
+         </font>
+      </Text>
+      <Button fx:id="sendMessage" defaultButton="true" layoutX="681.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleSendMessage" prefHeight="25.0" prefWidth="49.0" text="➜" />
+      <Button fx:id="cancelMessage" layoutX="736.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleCancelMessage" prefHeight="25.0" prefWidth="97.0" text="Cancel" />
+      <Text fill="#1d5079" layoutX="703.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chatHeader" text="Online:">
+         <font>
+            <Font name="Arial Black" size="28.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

@@ -1,0 +1,38 @@
+.button, .button:hover {
+    -fx-font-family: Roboto, Arial;
+    -fx-font-size: 13px;
+}
+
+.text-area {
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 11pt;
+}
+
+.text-area *.content {
+    -fx-background-color: lightyellow;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 1px;
+    -fx-border-color: whitesmoke;
+    -fx-cursor: default;
+}
+
+.text-area:focused {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5, 4, 3;
+}
+
+/* Dialogues */
+/*.dialog-pane {*/
+/*.dialog-pane:header .header-panel {*/
+
+.dialog-pane > .content.label {
+    -fx-font-size: 12pt;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-style: italic;
+    -fx-font-size: 16pt;
+}

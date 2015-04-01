@@ -1,0 +1,3 @@
+LanChat+ is a simple, just for education developed chat program where you can chat with other users in Lan and it's Open Source!
+So if you want you can use the code for learning or if you want to help me, you could write a comment or send me a pull request.
+The source code can be found at my github account: https://github.com/SuperiozDE
