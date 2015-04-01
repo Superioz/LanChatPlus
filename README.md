@@ -7,6 +7,7 @@ This program is just an exercise to test stuff with sockets, streams and so on, 
 - If there is a big error which shouldn't appear
 - If there is something in the code which could/must be better
 - If the code is okay but it doesn't do what it should do
+So: I'm not liable, if it doesn't work with Windows 7- or Java 7 (and older versions), because it's written with Windows 8 and Java 8.
 
 ## Usage
 It's pretty simple to use this chat program. First it opens a window, where you can type in your username, the server port and if needed the server ip. When you click 'Launch' it opens the main chat interface and then should be connected to a server if your input was right.
