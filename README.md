@@ -3,10 +3,10 @@ A just for education written Chat program, where you can chat with others in Lan
 
 ## Prolog
 This program is just an exercise to test stuff with sockets, streams and so on, so if it doesn't work with older Java versions then Java 8 or if it doesn't start with Windows 7 then please don't create a new issue here. **Reasons for an issue report** are following:
-- It doesn't work with **Java 8 and Windows 8**
-- There is a big error which shouldn't appear
-- There is something in the code which could/must be better
-- The code is okay but it doesn't do what it should do
+- If it doesn't work with **Java 8 and Windows 8**
+- If there is a big error which shouldn't appear
+- If there is something in the code which could/must be better
+- If the code is okay but it doesn't do what it should do
 
 ## Usage
 It's pretty simple to use this chat program. First it opens a window, where you can type in your username, the server port and if needed the server ip. When you click 'Launch' it opens the main chat interface and then should be connected to a server if your input was right.
