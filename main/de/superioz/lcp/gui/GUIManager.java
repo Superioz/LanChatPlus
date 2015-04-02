@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import main.de.superioz.lcp.Main;
@@ -73,6 +74,28 @@ public class GUIManager {
         this.addChatKeyEvent();
     }
 
+    public void setupSettingsWindow() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        Parent fxmlScene = loader.load(getClass().getResource("scenes/settings.fxml").openStream());
+        Scene scene = new Scene(fxmlScene);
+        scene.getStylesheets().add("/main/resources/style.css");
+
+        // Creating stage
+        Stage stage = new Stage();
+        stage.setTitle(getChildTitle("Settings"));
+        stage.setScene(scene);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/icons/stageIcon.png")));
+
+        // Sizing of stage
+        stage.sizeToScene();
+        stage.setResizable(false);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(Main.primaryStage);
+        this.addCloseRequestEvent(stage);
+        Main.settingsStage = stage;
+        Main.settingsSceneController = loader.getController();
+    }
+
     /**
      * Adds an event to stage which handles the close
      *
@@ -80,7 +103,12 @@ public class GUIManager {
      */
     public void addCloseRequestEvent(Stage stage){
         stage.setOnCloseRequest(event -> {
-            if(stage != Main.primaryStage){
+            if(stage == Main.settingsStage){
+                // Save settings
+                if(Main.settingsSceneController.comboBox.getValue() != null)
+                    Main.settings.setLanguage(Main.settingsSceneController.comboBox.getValue());
+            }
+            else if(stage != Main.primaryStage){
 
                 Main.network.disconnectClient();
                 Main.network.closeServer();

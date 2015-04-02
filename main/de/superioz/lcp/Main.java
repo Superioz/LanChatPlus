@@ -7,13 +7,17 @@ import main.de.superioz.lcp.chat.Chat;
 import main.de.superioz.lcp.gui.GUIManager;
 import main.de.superioz.lcp.gui.container.StartupInput;
 import main.de.superioz.lcp.gui.scenes.ChatSceneController;
+import main.de.superioz.lcp.gui.scenes.SettingsSceneController;
 import main.de.superioz.lcp.gui.scenes.StartMenuController;
+import main.de.superioz.lcp.lang.Language;
+import main.de.superioz.lcp.lang.LanguageManager;
 import main.de.superioz.lcp.logging.ConsoleLogger;
 import main.de.superioz.lcp.logging.LoggingLevel;
 import main.de.superioz.lcp.network.Network;
 import main.de.superioz.lcp.network.eventsystem.events.*;
 import main.de.superioz.lcp.network.eventsystem.handling.NetworkEventManager;
 import main.de.superioz.lcp.network.eventsystem.listener.*;
+import main.de.superioz.lcp.util.settings.SettingsManager;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -29,10 +33,15 @@ public class Main extends Application {
     public static StartupInput startupInput;
 
     public static GUIManager guiManager;
+    public static SettingsManager settings;
+    public static NetworkEventManager eventManager;
+    public static LanguageManager lang;
+
     public static Stage primaryStage;
     public static Stage chatInterface;
-    public static NetworkEventManager eventManager;
+    public static Stage settingsStage;
 
+    public static SettingsSceneController settingsSceneController;
     public static ChatSceneController chatSceneController;
     public static StartMenuController primaryStageController;
 
@@ -43,8 +52,26 @@ public class Main extends Application {
      * @param args default java program arguments
      */
     public static void main(String[] args){
+        /*
+         * Init settings
+         */
+        settings = new SettingsManager();
+        settings = new SettingsManager();
+        settings.init();
+
+        /*
+         * Init language props
+         */
+        lang = new LanguageManager(Language.fromString(settings.getLanguage()));
+        ConsoleLogger.println(LoggingLevel.SUCCESS, true, "Current language: " + settings.getLanguage());
+
+        // Start stage
         launch(args);
     }
+
+    /*
+     * TODO Fit more scenes and mesages to language system
+     */
 
     /**
      * The start method of the application.
@@ -74,8 +101,9 @@ public class Main extends Application {
          * localhost server with given port
          */
         guiManager = new GUIManager(this);
-        primaryStage.setTitle(guiManager.getChildTitle("Startup Menu"));
+        primaryStage.setTitle(guiManager.getChildTitle(lang.get("startupMenuTitle")));
         guiManager.setupStartInterface();
+        guiManager.setupSettingsWindow();
 
         /*
          * Resize stage to scene and show it

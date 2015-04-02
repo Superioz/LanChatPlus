@@ -6,52 +6,62 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.StartMenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.StartMenuController">
    <children>
-      <Text fx:id="header" fill="#1d5079" layoutX="86.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="startMenuHeader" text="LanChatPlus" wrappingWidth="277.25">
+      <Text fx:id="header" fill="#1d5079" layoutX="86.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="startMenuHeader" text="LanChatPlus" wrappingWidth="277.25">
          <font>
             <Font name="Arial Black" size="40.0" />
          </font>
          <effect>
             <InnerShadow />
          </effect></Text>
-      <Label fx:id="enterName" layoutX="39.0" layoutY="117.0" prefHeight="20.0" prefWidth="97.0" styleClass="startMenuLabel" text="Username:">
+      <Label fx:id="enterName" layoutX="38.0" layoutY="132.0" prefHeight="20.0" prefWidth="97.0" styleClass="startMenuLabel" text="Username:">
          <font>
             <Font name="Roboto Medium" size="16.0" />
          </font></Label>
-      <Label fx:id="enterPort" layoutX="39.0" layoutY="160.0" styleClass="startMenuLabel" text="IP:">
+      <Label fx:id="enterPort" layoutX="39.0" layoutY="183.0" styleClass="startMenuLabel" text="IP:">
          <font>
             <Font name="Roboto Medium" size="16.0" />
          </font></Label>
-      <TextField fx:id="usernameField" layoutX="153.0" layoutY="113.0" prefHeight="28.0" prefWidth="277.0" promptText="Enter username here ..">
+      <TextField fx:id="usernameField" layoutX="154.0" layoutY="128.0" prefHeight="28.0" prefWidth="277.0" promptText="Enter username here ..">
          <font>
             <Font name="Roboto" size="14.0" />
          </font></TextField>
-      <TextField fx:id="portField" layoutX="311.0" layoutY="157.0" prefHeight="20.0" prefWidth="60.0" promptText="Port">
+      <TextField fx:id="portField" layoutX="311.0" layoutY="180.0" prefHeight="20.0" prefWidth="60.0" promptText="Port">
          <font>
             <Font name="Arial" size="14.0" />
          </font></TextField>
-      <Button layoutX="341.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="25.0" prefWidth="97.0" text="Exit Program">
+      <Button fx:id="exit" layoutX="334.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="25.0" prefWidth="97.0" text="Exit Program">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button defaultButton="true" layoutX="242.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleLaunchButton" prefHeight="25.0" prefWidth="75.0" text="Launch">
+      <Button fx:id="launch" defaultButton="true" layoutX="243.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleLaunchButton" prefHeight="25.0" prefWidth="75.0" text="Launch">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Separator layoutY="81.0" prefHeight="3.0" prefWidth="449.0" />
-      <Separator layoutX="1.0" layoutY="210.0" prefHeight="3.0" prefWidth="449.0" />
-      <TextField fx:id="addressField" layoutX="153.0" layoutY="157.0" prefHeight="25.0" prefWidth="134.0" promptText="IP Address  ">
+      <Separator layoutY="99.0" prefHeight="3.0" prefWidth="449.0" />
+      <Separator layoutX="1.0" layoutY="241.0" prefHeight="3.0" prefWidth="449.0" />
+      <TextField fx:id="addressField" layoutX="154.0" layoutY="180.0" prefHeight="25.0" prefWidth="134.0" promptText="IP Address  ">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="298.0" layoutY="162.0" text=":">
+      <Label layoutX="299.0" layoutY="185.0" text=":">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
+      <MenuBar layoutX="1.0" prefHeight="25.0" prefWidth="449.0">
+        <menus>
+          <Menu fx:id="program" mnemonicParsing="false" text="Program">
+            <items>
+              <MenuItem fx:id="exitMenu" mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+                  <MenuItem fx:id="settingsMenu" mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </Pane>
