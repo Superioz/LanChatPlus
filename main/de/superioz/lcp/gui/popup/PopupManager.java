@@ -53,8 +53,8 @@ public class PopupManager {
      */
     public static void popupError(String errorText, String header, Exception ex, Stage owner){
         Alert popupWindow = new Alert(Alert.AlertType.ERROR);
-        popupWindow.setTitle(Main.guiManager.getChildTitle("Error dialog"));
-        popupWindow.setHeaderText(header.isEmpty() ? "Oops, there was an error!" : header);
+        popupWindow.setTitle(Main.guiManager.getChildTitle(Main.lang.get("popupErrorTitle")));
+        popupWindow.setHeaderText(header.isEmpty() ? Main.lang.get("popupErrorHeader") : header);
         popupWindow.setContentText(errorText);
 
         //Check if exception != null
@@ -66,7 +66,7 @@ public class PopupManager {
             String exceptionText = sw.toString();
 
             // Text area with header
-            Label stacktraceHeader = new Label("The exception stacktrace was:");
+            Label stacktraceHeader = new Label(Main.lang.get("popupExStacktraceWas"));
             TextArea stacktraceArea = new TextArea(exceptionText);
             stacktraceArea.setEditable(false);
             stacktraceArea.setWrapText(true);
@@ -86,8 +86,8 @@ public class PopupManager {
         }
 
         // Buttons
-        ButtonType buttonTypeAccept = new ButtonType("Understand");
-        ButtonType buttonTypeExit = new ButtonType("Exit");
+        ButtonType buttonTypeAccept = new ButtonType(Main.lang.get("popupUnderstandButton"));
+        ButtonType buttonTypeExit = new ButtonType(Main.lang.get("popupExitButton"));
         popupWindow.getButtonTypes().setAll(buttonTypeAccept, buttonTypeExit);
 
         // Style
@@ -130,7 +130,7 @@ public class PopupManager {
         popupWindow.setContentText(fullContext);
 
         // Buttons
-        ButtonType buttonTypeAccept = new ButtonType("Done", ButtonBar.ButtonData.OK_DONE);
+        ButtonType buttonTypeAccept = new ButtonType(Main.lang.get("popupDoneButton"), ButtonBar.ButtonData.OK_DONE);
         popupWindow.getDialogPane().getButtonTypes().setAll(buttonTypeAccept);
 
         // Style

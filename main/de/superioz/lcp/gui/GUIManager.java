@@ -60,7 +60,6 @@ public class GUIManager {
 
         // Creating stage
         Stage stage = new Stage();
-        stage.setTitle(getChildTitle("Chat Interface"));
         stage.setScene(scene);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/icons/stageIcon.png")));
 
@@ -82,7 +81,7 @@ public class GUIManager {
 
         // Creating stage
         Stage stage = new Stage();
-        stage.setTitle(getChildTitle("Settings"));
+        stage.setTitle(getChildTitle(Main.lang.get("settingsTitle")));
         stage.setScene(scene);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/icons/stageIcon.png")));
 

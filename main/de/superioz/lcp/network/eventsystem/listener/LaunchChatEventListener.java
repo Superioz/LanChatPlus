@@ -17,6 +17,8 @@ public class LaunchChatEventListener implements NetworkEventListener {
     public void handleLaunchEvent(LaunchChatEvent event){
         // Close primary stage, open Chat Window
         Main.primaryStage.close();
+        Main.chatInterface.setTitle(Main.guiManager
+                .getChildTitle(Main.lang.get("chatTitle").replaceAll("%name", Main.startupInput.getName())));
         Main.chatInterface.show();
         Main.chatSceneController.messageField.requestFocus();
 

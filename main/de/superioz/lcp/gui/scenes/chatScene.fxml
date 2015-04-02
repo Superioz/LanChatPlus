@@ -10,21 +10,21 @@
    <children>
       <MenuBar prefHeight="25.0" prefWidth="847.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Connection">
+          <Menu fx:id="connection" mnemonicParsing="false" text="Connection">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleQuitConnection" text="Quit (Back to menu)" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleYourProfile" text="Your Profile" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleServerProfile" text="Server's Profile" />
+              <MenuItem fx:id="quitToMenuItem" mnemonicParsing="false" onAction="#handleQuitConnection" text="Quit (Back to menu)" />
+                  <MenuItem fx:id="yourProfileItem" mnemonicParsing="false" onAction="#handleYourProfile" text="Your Profile" />
+                  <MenuItem fx:id="serversProfileItem" mnemonicParsing="false" onAction="#handleServerProfile" text="Server's Profile" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Program">
+          <Menu fx:id="program" mnemonicParsing="false" text="Program">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleExitProgram" text="Exit" />
+              <MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#handleExitProgram" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu fx:id="help" mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+              <MenuItem fx:id="aboutItem" mnemonicParsing="false" onAction="#handleAbout" text="About" />
             </items>
           </Menu>
         </menus>
