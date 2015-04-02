@@ -56,7 +56,9 @@ public class ReceivingPacketEventListener implements NetworkEventListener {
                     if(instruction.getCommandContent().equals("true")){
                         // Close the network
                         Main.network.disconnectClient(true);
-                        Platform.runLater(() -> PopupManager.popupError(CustomFileManager.getTextFile("nsGoneOffline") + "\n", "NetworServer gone offline!", null, Main.chatInterface));
+                        Platform.runLater(() ->
+                                PopupManager.popupError(CustomFileManager.getTextFile(Main.lang.get("popupNSGoneOfflineFile")) + "\n"
+                                        , Main.lang.get("popupNSGoneOffline"), null, Main.chatInterface));
 
                         return;
                     }

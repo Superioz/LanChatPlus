@@ -25,7 +25,7 @@ public class PopupManager {
      * @param header The header above the content text
      * @param content The content
      */
-    public static void popup(Stage owner, PopupType type, String title, String header, String... content){
+    public static void popup(Stage owner, PopupType type, String title, String header, boolean exitOnOkay, String... content){
         Alert popupWindow = new Alert(type.getType());
         popupWindow.setTitle(title);
         popupWindow.setHeaderText(header);
@@ -37,12 +37,21 @@ public class PopupManager {
         }
         popupWindow.setContentText(fullContext);
 
+        // Buttons
+        ButtonType buttonTypeAccept = new ButtonType("Okay");
+        popupWindow.getButtonTypes().setAll(buttonTypeAccept);
+
         // Style
         popupWindow.getDialogPane().getStylesheets()
                 .add(PopupManager.class.getResource("/main/resources/style.css").toExternalForm());
 
         popupWindow.initOwner(owner);
-        popupWindow.showAndWait();
+        Optional<ButtonType> result = popupWindow.showAndWait();
+        if(result.get() != null){
+            // He accept the error go back to menu
+            System.exit(0);
+
+        }
     }
 
     /**

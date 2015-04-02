@@ -1,5 +1,6 @@
 package main.de.superioz.lcp.lang;
 
+import main.de.superioz.lcp.Main;
 import main.de.superioz.lcp.util.PropertiesReader;
 
 /**
@@ -37,6 +38,11 @@ public class LanguageManager {
 
     public String get(String key){
         return props.getProperty(key);
+    }
+
+    public void refreshLang(){
+        this.language = Language.fromString(Main.settings.getLanguage());
+        this.init();
     }
 
 }

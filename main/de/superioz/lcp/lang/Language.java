@@ -24,7 +24,7 @@ public enum Language {
         Language lang;
 
         switch(name.toLowerCase()){
-            case "german":
+            case "deutsch":
                 lang = Language.GERMAN;
                 break;
             case "english":

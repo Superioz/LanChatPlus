@@ -1,0 +1,1 @@
+Verbindung zum Server getrennt, weil der Host verlassen hat. Du kannst jetzt nur zum Menü zurückkehren.

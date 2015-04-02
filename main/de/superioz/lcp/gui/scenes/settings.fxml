@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.SettingsSceneController">
    <children>
       <Separator layoutY="89.0" prefHeight="4.0" prefWidth="407.0" />
@@ -14,7 +13,7 @@
             <Font name="Arial Black" size="45.0" />
          </font>
       </Text>
-      <Label layoutX="64.0" layoutY="123.0" text="Language:">
+      <Label fx:id="languageLabel" layoutX="64.0" layoutY="123.0" text="Language:">
          <font>
             <Font name="Roboto Medium" size="16.0" />
          </font>

@@ -38,6 +38,13 @@ public class ChatSceneController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
+        this.init();
+    }
+
+    /**
+     * Init the stage
+     */
+    public void init(){
         connection.setText(Main.lang.get("chatConnectionMenu"));
         program.setText(Main.lang.get("chatProgramMenu"));
         help.setText(Main.lang.get("chatHelpMenu"));

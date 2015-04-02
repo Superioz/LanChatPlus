@@ -10,6 +10,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import main.de.superioz.lcp.Main;
+import main.de.superioz.lcp.gui.popup.PopupManager;
+import main.de.superioz.lcp.gui.popup.PopupType;
 import main.de.superioz.lcp.logging.ConsoleLogger;
 import main.de.superioz.lcp.logging.LoggingLevel;
 import main.de.superioz.lcp.network.eventsystem.events.SendMessageEvent;
@@ -106,6 +108,9 @@ public class GUIManager {
                 // Save settings
                 if(Main.settingsSceneController.comboBox.getValue() != null)
                     Main.settings.setLanguage(Main.settingsSceneController.comboBox.getValue());
+
+                PopupManager.popup(Main.primaryStage, PopupType.INFORMATION
+                        , Main.lang.get("settingsCloseApp"), Main.lang.get("settingsCloseAppHeader"), true, Main.lang.get("settingsCloseAppText"));
             }
             else if(stage != Main.primaryStage){
 

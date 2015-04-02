@@ -39,6 +39,13 @@ public class StartMenuController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
+        this.init();
+    }
+
+    /**
+     * Inits the stages for updated language or start
+     */
+    public void init(){
         enterName.setText(Main.lang.get("startupMenuEnterName"));
         enterPort.setText(Main.lang.get("startupMenuEnterPort"));
 
