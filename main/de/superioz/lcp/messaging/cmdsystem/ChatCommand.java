@@ -10,11 +10,13 @@ public enum ChatCommand {
      A message must send to server first and then print to chat when a client receives it
       */
     BROADCAST("broadcast", CommandType.CLIENT_TO_SERVER),
+    SEND_TO("send_to", CommandType.CLIENT_TO_SERVER),
     WELCOME("welcome", CommandType.CLIENT_TO_SERVER),
     GOODBYE("goodbye", CommandType.CLIENT_TO_SERVER),
+    NEW_ONLINE_LIST("new_onlinelist", CommandType.SERVER_TO_CLIENT),
     PRINT_TO_CHAT("print", CommandType.SERVER_TO_CLIENT),
+    RECEIVE_FROM("receive_from", CommandType.SERVER_TO_CLIENT),
     USER_JOINED("user_joined", CommandType.SERVER_TO_CLIENT),
-    NEW_ONLINE_LIST("new_onlinelist", CommandType.CLIENT_TO_SERVER),
     USER_LEFT("user_left", CommandType.SERVER_TO_CLIENT);
 
     public String commandLine;

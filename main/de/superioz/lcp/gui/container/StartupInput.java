@@ -37,7 +37,7 @@ public class StartupInput {
         Pattern pattern = Pattern.compile("[a-zA-Z_0-9]*");
         Matcher matcher = pattern.matcher(name);
         boolean verifiedName = matcher.matches() && name.length() <= 25 && !name.isEmpty();
-        this.name = verifiedName ? name : Main.getComputername();
+        this.name = verifiedName ? name : Main.getComputername().replaceAll(" ", "");
 
         try {
             int portNumber = Integer.parseInt(port);

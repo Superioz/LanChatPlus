@@ -47,7 +47,8 @@ public class ReceivingPacketEventListener implements NetworkEventListener {
                  */
                 case USER_JOINED:
                     // Adds the given user to online list and send joined chat message
-                    Main.networkChat.sendln(MessagePattern.JOIN_AND_LEAVE, instruction.getClientsName() + " joined this ChatNetwork!");
+                    Main.networkChat.sendln(MessagePattern.JOIN_AND_LEAVE
+                            , Main.lang.get("chatUserJoined").replaceAll("%user%", instruction.getClientsName()));
                     Main.networkChat.onlineList.add(instruction.getClientsName());
 
                     break;
@@ -64,7 +65,8 @@ public class ReceivingPacketEventListener implements NetworkEventListener {
                     }
 
                     // Send message that the user left
-                    Main.networkChat.sendln(MessagePattern.JOIN_AND_LEAVE, instruction.getClientsName() + " has left this ChatNetwork!");
+                    Main.networkChat.sendln(MessagePattern.JOIN_AND_LEAVE
+                            , Main.lang.get("chatUserLeft").replaceAll("%user%", instruction.getClientsName()));
                     Main.networkChat.onlineList.remove(instruction.getClientsName());
 
                     break;
@@ -107,6 +109,24 @@ public class ReceivingPacketEventListener implements NetworkEventListener {
 
                     Main.networkChat.onlineList.refresh();
                     break;
+
+                /*
+                 * Private messaging
+                 */
+                case SEND_TO:
+                    Network.getNetworkServer()
+                            .send(PacketUtil.make(instruction.getClientsName(),
+                                    ChatCommand.RECEIVE_FROM, instruction.getCommandContent()));
+                    break;
+                case RECEIVE_FROM:
+                    String name = instruction.getCommandContent().split(" ")[0].replaceFirst("@", "");
+                    String message = instruction.getCommandContent().replaceFirst("@" + name + " ", "");
+
+                    if(Main.network.getClientsName().equals(name)){
+                        Main.networkChat.printPrivateChat(instruction.getClientsName(), message);
+                    }
+                    break;
+
                 default:
                     break;
             }

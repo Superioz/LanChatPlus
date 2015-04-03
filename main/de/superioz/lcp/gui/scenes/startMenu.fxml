@@ -31,12 +31,12 @@
          <font>
             <Font name="Arial" size="14.0" />
          </font></TextField>
-      <Button fx:id="exit" layoutX="334.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="25.0" prefWidth="97.0" text="Exit Program">
+      <Button fx:id="exit" layoutX="319.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="29.0" prefWidth="112.0" text="Exit Program">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="launch" defaultButton="true" layoutX="243.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleLaunchButton" prefHeight="25.0" prefWidth="75.0" text="Launch">
+      <Button fx:id="launch" defaultButton="true" layoutX="206.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleLaunchButton" prefHeight="29.0" prefWidth="97.0" text="Launch">
          <font>
             <Font size="13.0" />
          </font>

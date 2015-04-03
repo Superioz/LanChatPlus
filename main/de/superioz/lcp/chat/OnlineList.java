@@ -65,6 +65,10 @@ public class OnlineList {
         this.refresh();
     }
 
+    public boolean contains(String name){
+        return users.contains(name);
+    }
+
     public TextArea getListArea(){
         return listArea;
     }

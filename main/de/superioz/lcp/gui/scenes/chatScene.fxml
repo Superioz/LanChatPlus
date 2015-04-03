@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.ChatSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.de.superioz.lcp.gui.scenes.ChatSceneController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="847.0">
+      <MenuBar prefHeight="25.0" prefWidth="915.0">
         <menus>
           <Menu fx:id="connection" mnemonicParsing="false" text="Connection">
             <items>
@@ -29,17 +29,17 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextArea fx:id="mainChatWindow" editable="false" layoutX="14.0" layoutY="68.0" prefHeight="418.0" prefWidth="649.0" wrapText="true" />
-      <TextField fx:id="messageField" layoutX="14.0" layoutY="498.0" prefHeight="25.0" prefWidth="649.0" />
-      <TextArea fx:id="onlineUsers" editable="false" layoutX="681.0" layoutY="68.0" prefHeight="418.0" prefWidth="152.0" wrapText="true" />
+      <TextArea fx:id="mainChatWindow" editable="false" layoutX="14.0" layoutY="68.0" prefHeight="418.0" prefWidth="697.0" wrapText="true" />
+      <TextField fx:id="messageField" layoutX="14.0" layoutY="498.0" prefHeight="25.0" prefWidth="697.0" />
+      <TextArea fx:id="onlineUsers" editable="false" layoutX="734.0" layoutY="68.0" prefHeight="418.0" prefWidth="152.0" wrapText="true" />
       <Text fill="#1d5079" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chatHeader" text="Chat:" wrappingWidth="97.0">
          <font>
             <Font name="Arial Black" size="28.0" />
          </font>
       </Text>
-      <Button fx:id="sendMessage" defaultButton="true" layoutX="681.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleSendMessage" prefHeight="25.0" prefWidth="49.0" text="➜" />
-      <Button fx:id="cancelMessage" layoutX="736.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleCancelMessage" prefHeight="25.0" prefWidth="97.0" text="Cancel" />
-      <Text fill="#1d5079" layoutX="703.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chatHeader" text="Online:">
+      <Button fx:id="sendMessage" defaultButton="true" layoutX="734.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleSendMessage" prefHeight="25.0" prefWidth="49.0" text="➜" />
+      <Button fx:id="cancelMessage" layoutX="789.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleCancelMessage" prefHeight="25.0" prefWidth="97.0" text="Cancel" />
+      <Text fill="#1d5079" layoutX="756.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chatHeader" text="Online:">
          <font>
             <Font name="Arial Black" size="28.0" />
          </font>

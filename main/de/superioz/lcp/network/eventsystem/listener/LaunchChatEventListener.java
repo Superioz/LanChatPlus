@@ -26,7 +26,7 @@ public class LaunchChatEventListener implements NetworkEventListener {
         Chat chat = Main.networkChat;
 
         // Start the server
-        chat.sendln(MessagePattern.SERVER, "Starting server ..");
+        chat.sendln(MessagePattern.SERVER, Main.lang.get("chatStartingServer"));
 
         Main.network = new Network(event.getStartupInput().getPort(), event.getStartupInput().getIp());
         int serverRespond = Main.network.startServer();
@@ -35,16 +35,16 @@ public class LaunchChatEventListener implements NetworkEventListener {
             case 1:
                 // Server started
                 chat.sendln(MessagePattern.SERVER
-                        , "Server started [@" + Main.network.getIPAddress() + "]. Connect ..");
+                        , Main.lang.get("chatServerStarted").replaceAll("%ip%", Main.network.getIPAddress()));
                 break;
             case 0:
                 // Server isnt started because another server is running on that port
                 chat.sendln(MessagePattern.SERVER
-                        , "Server not started 'cause a server is already running on that port. Connect to it ..");
+                        , Main.lang.get("chatServerNotStartedBecause"));
                 break;
             case -1:
                 chat.sendln(MessagePattern.SERVER
-                        , "Couldn't start a server 'cause an error! Back to menu ..");
+                        , Main.lang.get("chatCouldntStartServer"));
 
                 Main.guiManager.backToMainMenu(Main.chatInterface);
                 break;
@@ -57,7 +57,7 @@ public class LaunchChatEventListener implements NetworkEventListener {
         switch(clientRespond){
             case 1:
                 chat.sendln(MessagePattern.SERVER
-                        , "Connected to the server.");
+                        , Main.lang.get("chatConnected"));
                 break;
             case -1:
                 Main.guiManager.backToMainMenu(Main.chatInterface);

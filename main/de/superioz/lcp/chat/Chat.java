@@ -73,4 +73,12 @@ public class Chat {
                 .send(PacketUtil.make(clientName, ChatCommand.BROADCAST, msg));
     }
 
+    public void printPrivateChat(String sender, String msg){
+        this.sendln(MessagePattern.applyPatternOn(msg, MessagePattern.PRIVATE_RECEIVER, sender));
+    }
+
+    public void printPrivateChatTo(String sender, String msg){
+        this.sendln(MessagePattern.applyPatternOn(msg, MessagePattern.PRIVATE_SENDER, sender));
+    }
+
 }
